@@ -1,0 +1,348 @@
+body {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../src/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 1rem;
+    gap: .5rem;
+}
+
+/* auth form */
+#auth-form {
+    flex: 3;
+    text-align: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#auth-form.active {
+    display: flex;
+}
+
+#auth-form .content {
+    width: 260px;
+}
+
+#auth-form h2 {
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+#auth-form input {
+    margin: .5rem auto;
+    width: 100%;
+}
+
+#auth-form button {
+    margin: .5rem auto;
+    width: 100%;
+}
+
+/* container */
+.container {
+    width: calc(100% - 370px);
+    height: 100%;
+    position: relative;
+    display: none;
+    gap: .5rem;
+}
+
+.container.active {
+    display: flex;
+}
+
+/* user-form */
+#user-form h4 {
+    margin: .5rem auto;
+}
+
+#user-form select,
+#user-form button,
+#user-form input {
+    width: 100%;
+    margin: .3rem auto;
+}
+
+/* sidebar */
+.sidebar {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .users {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.sidebar .user {
+    border-bottom: 1px solid rgba(229, 229, 229, 0.1);
+    padding: .8rem .5rem;
+    font-size: 1.1rem;
+    width: 100%;
+    color: #b1a7a6;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar .user p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.sidebar .user.active p {
+    color: var(--primary);
+}
+
+#close-sidebar {
+    display: none;
+}
+
+/* message container */
+.message-container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 250px);
+    height: 100%;
+}
+
+.message-container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    overflow: hidden;
+    overflow-x: auto;
+    gap: .2rem;
+    text-wrap: nowrap;
+}
+
+.message-container .header button {
+    display: none;
+}
+
+.message-content {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.message-content .line {
+    padding: .5rem;
+}
+
+.message-content .line .head {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.message-content .line .head b {
+    width: 100%;
+    height: 2px;
+    background: var(--secondary);
+}
+
+.message-content .line .indicator {
+    font-size: 1.4em;
+    margin-right: 5px;
+    font-weight: bold;
+    color: #B0E0E6;
+}
+
+.message-content .line .username {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #B0E0E6;
+}
+
+.message-content .line .time {
+    font-size: 0.85em;
+    color: #9E9E9E;
+}
+
+.message-content .line .message-text {
+    font-size: 1.1em;
+    line-height: 1.5;
+    padding-left: 1.5rem;
+    color: var(--primary);
+    overflow-x: auto;
+}
+
+.message-content .remote .message-text {
+    color: var(--typing);
+}
+
+.message-content .line img,
+.message-content .line video {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    object-fit: contain;
+    border: var(--border);
+    border-radius: 4px;
+}
+
+.message-content .line img {
+    max-width: 300px;
+}
+
+.message-content .line .file {
+    cursor: pointer;
+    color: #B0E0E6;
+    display: block;
+    font-size: 1.1rem;
+    padding-bottom: 1rem;
+}
+
+/* chat-form */
+#chat-form {
+    width: 100%;
+    display: none;
+    align-items: center;
+    gap: .4rem;
+}
+
+#chat-form.active {
+    display: flex;
+}
+
+#chat-form input,
+#chat-form textarea {
+    width: 100%;
+    resize: none;
+}
+
+#chat-form button {
+    font-family: monospace, sans-serif !important;
+}
+
+
+/* logger */
+.logger {
+    width: 370px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: .5rem 1rem;
+    border: var(--border);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logger .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.logger .logo img {
+    height: 50px;
+}
+
+.logger .content {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.logger .content p {
+    font-size: .9rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    border-bottom: var(--border);
+    padding: .3rem 0;
+}
+
+/* typing */
+.char {
+    animation: typing 500ms linear;
+    color: var(--typing);
+}
+
+@keyframes typing {
+    0% {
+        background: #FFF;
+        color: #FFF;
+    }
+
+    5% {
+        background: transparent;
+        color: #FFF;
+    }
+
+    100% {
+        background: transparent;
+        color: var(--typing);
+    }
+
+}
+
+
+
+/* media */
+@media(max-width: 1000px) {
+    html {
+        font-size: 90%;
+    }
+
+    body {
+        flex-direction: column-reverse;
+        padding: .2rem;
+        gap: 0rem;
+    }
+
+    .container {
+        height: 70%;
+        width: 100%;
+    }
+
+    .message-container {
+        width: 100%;
+    }
+
+    .logger {
+        width: 100%;
+        height: 30%;
+        padding: .4rem;
+    }
+
+    .sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 100;
+        display: none;
+        padding: .5rem;
+    }
+
+    #user-form {
+        padding: .5rem;
+    }
+
+    .sidebar.active {
+        display: flex;
+    }
+
+    #close-sidebar {
+        display: inline-block;
+        width: fit-content;
+    }
+
+    .message-container .header button {
+        display: block;
+    }
+
+    .logger .content p {
+        padding: .1rem;
+    }
+}

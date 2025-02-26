@@ -1,0 +1,28 @@
+{
+  "name": "chatseq",
+  "version": "0.0.1",
+  "description": "ChatseQ is a decentralized chat application ensuring secure, private communication through AES and RSA encryption.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon --env-file=.env server.js"
+  },
+  "engines": {
+    "node": ">=16.x"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Tarun",
+    "url": "https://tarunkaushik.tech"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "express": "^4.21.2",
+    "express-fileupload": "^1.5.1",
+    "express-rate-limit": "^7.5.0",
+    "form-data": "^4.0.1",
+    "octavia-db": "^2.0.3",
+    "socket.io": "^4.7.5"
+  }
+}
